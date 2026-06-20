@@ -1,0 +1,17 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Task data (don't commit personal task storage)
+taskly.json
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/
