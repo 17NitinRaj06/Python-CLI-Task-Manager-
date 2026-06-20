@@ -73,21 +73,3 @@ python3 taskly.py clear
 Run `python3 taskly.py -h` or `python3 taskly.py <command> -h` for full
 argument details.
 
-## Why this design (for interview talking points)
-
-- **Single source of truth per command** — the CLI signature lives next
-  to the implementation, so there's no separate registration file that
-  can fall out of sync.
-- **Extensible** — new commands are additive; the dispatch logic in
-  `main()` never changes.
-- **Testable** — `load_tasks`/`save_tasks` and each command function are
-  plain functions that take/return data, making them easy to unit test
-  without spinning up the CLI.
-- **No framework lock-in** — built entirely on the standard library
-  (`argparse`, `json`, `uuid`, `pathlib`, `datetime`), which keeps the
-  dependency footprint at zero.
-
-## Files
-
-- `taskly.py` — entire application (storage layer, decorator/registry,
-  command implementations, entry point)
